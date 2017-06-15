@@ -1,0 +1,283 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>CarFinder App</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|" rel="stylesheet" type="text/css">
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" />    
+    <link rel="icon" type="image/png" href="~/dummy/CarFinder Favicon32.png" sizes="32x32" />
+    <!-- Loading main css file -->
+  
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="site-content">
+        <div class="site-header">
+            <div class="container">
+                <a href="index.html" id="branding">
+                    <img src="~/dummy/carfinder.png" style="height:40px;" alt="" class="logo">
+                    <div class="logo-text">
+                        <h1 class="site-title">Car Finder</h1>
+                        <small class="site-description">Find Your Car</small>
+                    </div>
+                </a> <!-- #branding -->
+                <!-- Default snippet for navigation -->
+                <div class="main-navigation">
+                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                    <ul class="menu">
+                        <li class="menu-item current-menu-item"><a href="http://kschwert-carfinder.azurewebsites.net">Home</a></li>
+                        <li class="menu-item"><a href="http://kschwert-carfinder.azurewebsites.net/Swagger/ui/index">API</a></li>
+                        @*<li class="menu-item"><a href="about.html">About</a></li>
+                        <li class="menu-item"><a href="project.html">our Projects</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>*@
+                    </ul> <!-- .menu -->
+                </div> <!-- .main-navigation -->
+                <div class="mobile-navigation"></div>
+            </div>
+        </div> <!-- .site-header -->
+        <div class="hero hero-slider">
+            <ul class="slides">
+                <li data-bg-image="/dummy/bugatti-veyron-super-sport-.jpg">
+                    <img src="" />
+                    <div class="container">
+                        <div class="slide-title">
+                            <span>welcome to my</span> <br>
+                            <span>car finder app</span>
+                        </div>
+                    </div>
+                </li>
+                <li data-bg-image="/dummy/laraki.jpg">
+                    <div class="container">
+                        <div class="slide-title">
+                            <span>please select the</span> <br>
+                            <span>car you want below</span>
+                        </div>
+                    </div>
+                </li>
+                <li data-bg-image="/dummy/yugo.jpg">
+                    <div class="container">
+                        <div class="slide-title">
+                            <span>and it will show</span> <br>
+                            <span>you your dream car</span>
+                        </div>
+                    </div>
+                </li>
+            </ul> <!-- .slides -->
+        </div> <!-- .hero-slider -->
+        <main class="main-content">
+            <div class="fullwidth-block latest-projects-section">
+                <div class="container">
+                    <h2 class="section-title">Search for your car!</h2>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <figure class="project-thumbnail"><img src="/dummy/years.jpg" alt="Project 1" style="height:210px;width:262.5px;"></figure>
+                                <h3 class="project-title"><a href="#">enter a year</a></h3>
+
+                                <p>Enter a year of the car that you are looking for.</p>
+                                <select type="number" id="years" style="width:200px;"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <figure class="project-thumbnail"><img src="/dummy/makes.png" alt="Project 2" style="height:210px;width:262.5px;"></figure>
+                                <h3 class="project-title"><a href="#">enter the car make</a></h3>
+
+                                <p>Enter the type of make of the car.</p>
+                                <select type="text" id="makes" style="width:200px;"></select>
+                                <!--<a href="#" class="more-link"><img src="images/arrow.png" alt=""></a>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <figure class="project-thumbnail"><img src="/dummy/carmodels.jpg" alt="Project 3" style="height:210px;"></figure>
+                                <h3 class="project-title"><a href="#">enter the car model</a></h3>
+
+                                <p>Enter the type of model that you are looking for.</p>
+                                <select type="text" id="models" style="width:200px;"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <figure class="project-thumbnail"><img src="/dummy/trims.jpg" alt="Project 4" style="height:210px;"></figure>
+                                <h3 class="project-title"><a href="#">enter the car trim</a></h3>
+
+                                <p>Enter the trim of the car you are looking for.</p>
+                                <select type="text" id="trims" style="width:200px;"></select>
+                            </div>
+                        </div>
+                    <button type="submit" id="enter">Enter</button>
+                    <div id="more">
+                    </div>
+                    </div> <!-- .row -->
+                </div> <!-- .container -->
+            </div> <!-- .fullwidth-block.latest-projects-section -->           
+
+
+            <div class="fullwidth-block image-block" data-bg-image="/dummy/fender.png"></div>
+            <div class="fullwidth-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <h3 class="section-title">About This App</h3>
+                            <p>This app is fueled by the Huge car List API service and with the help of SQL stored procedures and JQuery functions you are able to browse any car from 1936-2016. </p>
+                           
+                        </div>
+                        <div class="col-md-4">
+
+                            <h3 class="section-title">High Quality</h3>
+                            <p>The pictures of the cars are brought in by using the Google API and creating a new Custom Search. From that the API grabs the pictures from Edmunds, Cars.com, and Pinterest.</p>
+                           
+                        </div>
+                        <div class="col-md-4">
+
+                            <h3 class="section-title">Enjoy!</h3>
+                            <p>Cars are not only a necessity to function in today's society but they are also an obsession to some. I hope this app can help you in whatever purpose you have for cars.</p>
+                           
+                        </div>
+                    </div>
+                    <hr class="separator">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="section-title">Testimonials</h2>
+                            <div class="testimonial-slider">
+                                <ul class="slides">
+                                    <li>
+                                        <blockquote>
+                                            <p>My 1976 Gremlin finally bit the dust and I knew that I had to find a car that I liked quickly. Thankfully I found this app and it helped me find my dream 1995 Suzuki X-90 Convertible! My hair blows freely in the wind and it's an automatic pass for Schwert!</p>
+                                            <cite>Jason Twichell</cite>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <blockquote>
+                                            <p>This app is YUGE. When I found out that the Secret Service wanted to escort my in some run down Cadillac I quickly went on here and suggested that they buy me a Maybach 62 S. I am writing up a bill to be sent to Congress to have this passed ASAP.</p>
+                                            <cite>President Trump</cite>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <blockquote>
+                                            <p>Disappointed, I am disappointed.  I went on here to find a new startrooper but all, find were human vehicles, could I.  Maybe so day, find my dream app of getting those intergalatic vehicles online, will I!  </p>
+                                            <cite>Yoda</cite>
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="section-title">Latest News</h2>
+                            <ul class="news">
+                                <li>
+                                    <div class="date">17.04.2017</div>
+                                    <h3 class="entry-title"><a href="#">Began this project with no experience with Stored Procedures or how to populate a drop down list with information</a></h3>
+                                </li>
+                                <li>
+                                    <div class="date">07.05.2017</div>
+                                    <h3 class="entry-title"><a href="#">Deployed my app online with a fully function search feature that delivers quality photos of your car</a></h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!-- .row -->
+
+                </div> <!-- .container -->
+            </div> <!-- .fullwidth-block -->
+        </main> <!-- .main-content -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="pull-left">
+                    <address>
+                        <strong>Coder Foundry</strong>
+                        <p>1231 Shields Rd. Kernersville, NC</p>
+                    </address>
+                    
+                </div> <!-- .pull-left -->
+                <div class="colophon">Kevin Schwert's CarFinder App</div>
+            </div> <!-- .container -->
+        </footer> <!-- .site-footer -->
+    </div>
+    <!--<script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/app.js"></script>-->
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/plugins.js"></script>
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    @*<link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />*@
+    <script src="~/Scripts/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+            //$.getJSON("http://localhost:63357/api/cars/GetAllYearsofCars", function (data)
+            $.getJSON("http://kschwert-carfinder.azurewebsites.net/api/cars/GetAllYearsofCars", function (data)
+            {
+                $.each(data, function(key, val) {
+                    $("#years").append("<option value = '" + val + "'>" + val + "</option>");
+                });
+            })
+            $("#years").change(function () {
+                var year = $("#years").val();
+                $("#makes").html("");
+                $.getJSON("http://kschwert-carfinder.azurewebsites.net/api/cars/GetMakesByYear?year=" + year, function (data)
+                {
+                    $.each(data, function (key, val) {
+                        $("#makes").append("<option value = '" + val + "'>" + val + "</option>");
+                    });
+                })
+            })
+            $("#makes").change(function () {
+                var make = $("#makes").val();
+                var year = $("#years").val();
+                $("#models").html("");
+                $.getJSON("http://kschwert-carfinder.azurewebsites.net/api/cars/GetCarModelsYearMake?year=" + year + "&make=" + make, function (data)
+                {
+                    $.each(data, function (key, val) {
+                        $("#models").append("<option value = '" + val + "'>" + val + "</option>");
+                    });
+                })
+            })
+            $("#models").change(function () {
+                var make = $("#makes").val();
+                var year = $("#years").val();
+                var model = $("#models").val();
+                $("#trims").html("");
+                $.getJSON("http://kschwert-carfinder.azurewebsites.net/api/cars/GetModelTrimYearMakeModel?year=" + year + "&make=" + make + "&model=" + model, function (data)
+                {
+                    $.each(data, function (key, val) {
+                        $("#trims").append("<option value = '" + val + "'>" + val + "</option>");
+                    });
+                });
+            });
+            $("#enter").click(function() {
+                $("#more").html("");
+                var make = $("#makes").val();
+                var year = $("#years").val();
+                var model = $("#models").val();
+                var thing = "https://www.googleapis.com/customsearch/v1?q=" + make + "+" + model + "+" + year + "&cref=https%3A%2F%2Fcse.google.com%3A443%2Fcse%2Fpublicurl&cx=007751433983526664214%3Ahya_wrdyn8g&filter=1&imgSize=large&num=6&searchType=image&key=AIzaSyBHhp1ILZHO2qaMh3BODEyl4u_HnyN6g1Q";
+               
+                $.getJSON(thing, function (data) {
+                    for (var i = 0; i < 7; i++) {
+                        $("#more").append('<img src="' + data.items[i].link + '"/>');
+                    }
+                })
+            });
+            
+        });
+    </script>
+</body>
+</html>
